@@ -17,17 +17,6 @@ function specialCharacter(){
     let i = Math.floor(Math.random() * (special.length -1))
     return special[i]
 }
-function generatePassword(){
-    let i = Math.floor(Math.random() * 3)
-    let characterChoice = i
-    if (characterChoice === 1){
-        return normalCharacter();
-    } else if (characterChoice ===2){
-        return caiptalizedCharacter();
-    } else {
-        return specialCharacter();
-    }
-}
 
 // Write password to the #password input
 function writePassword() {
