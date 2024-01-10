@@ -3,8 +3,6 @@ var generateBtn = document.querySelector("#generate");
 var lowercase = [...'qwertyuiopasdfghjklzxcvbnm']
 var special = ['!', '@', '#', '$', '%', "^", "&", '*',]
 var uppercase = [... 'QWERTYUIOPASDFGHJKLZXCVBNM']
-var passwordArray =[]
-
 function normalCharacter(){
     let i = Math.floor(Math.random() * (lowercase.length-1))
     return lowercase[i]
@@ -28,11 +26,19 @@ function passwordCharacter(){
         return specialCharacter();
     }
 }
-
-function passwordlength(min, max){
+function passwordLength(){
         min = Math.ceil(8);
         max = Math.floor(128);
         return Math.floor(Math.random() * (max - min) + min);
+}
+function generatePassword(){
+    var passwordArray = []
+    for(i=0; i<= passwordLength(); i++){
+        passwordArray.push(passwordCharacter());
+    }
+    var passwordString = ''
+    passwordString = passwordArray.join("");
+    return passwordString;
 }
 // Write password to the #password input
 function writePassword() {
