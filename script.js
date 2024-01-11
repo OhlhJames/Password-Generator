@@ -3,6 +3,8 @@ var generateBtn = document.querySelector("#generate");
 var lowercase = [...'qwertyuiopasdfghjklzxcvbnm']
 var special = ['!', '@', '#', '$', '%', "^", "&", '*',]
 var uppercase = [... 'QWERTYUIOPASDFGHJKLZXCVBNM']
+var passwordlengths = prompt('How long did you need the password to be?', 'enter length')
+var characterRequirement = prompt('What kinds of characters did you need? (special, number, uppercase, lowercase)', 'enter types')
 function normalCharacter(){
     let i = Math.floor(Math.random() * (lowercase.length-1))
     return lowercase[i]
@@ -16,13 +18,15 @@ function specialCharacter(){
     return special[i]
 }
 function passwordCharacter(){
-    let i = Math.floor(Math.random() * 3)
+    let i = Math.floor(Math.random() * 4)
     let characterChoice = i
-    if (characterChoice === 1){
+    if (characterChoice === 0){
+        return Math.floor(Math.random() * 9);
+    } else if (characterChoice === 1){
         return normalCharacter();
     } else if (characterChoice === 2){
         return caiptalizedCharacter();
-    } else {
+    }else {
         return specialCharacter();
     }
 }
