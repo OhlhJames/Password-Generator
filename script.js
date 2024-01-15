@@ -1,8 +1,45 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var specialConfirm = confirm("Do you need special characters?");
-var numeralConfirm = confirm("Do you need numerals?");
-var uppercaseConfirm = confirm("Do you need uppercase characters?");
+specialConfirm = false
+uppercaseConfirm = false
+numeralConfirm = false
+lowercaseConfirm = false
+function characterSelector(){
+    var characterConfirm = prompt("Please enter a character type you need (ex. Special, Number, Uppercase, Lowercase):", "enter type");
+    if (characterConfirm === "Special") {
+        specialConfirm = true;
+        var additionalConfirm = confirm("did you need more character types?")
+        if (additionalConfirm === true){
+            characterSelector()
+        }
+    }else if(characterConfirm === "Number") {
+        numeralConfirm = true;
+        var additionalConfirm = confirm("did you need more character types?")
+        if (additionalConfirm === true){
+            characterSelector()
+        }
+    }else if(characterConfirm === "Uppercase") {
+        uppercaseConfirm = true;
+        var additionalConfirm = confirm("did you need more character types?")
+        if (additionalConfirm === true){
+            characterSelector()
+        }
+    }else if(characterConfirm === "Lowercase"){
+        lowercaseConfirm = true
+        var additionalConfirm = confirm("did you need more character types?")
+        if (additionalConfirm === true){
+            characterSelector()
+        }
+    } else if (lowercaseConfirm === true && uppercaseConfirm === true && numeralConfirm === true && specialConfirm === true){
+        alert("all characters selected!")
+    }else {
+        alert("please select at least one character type");
+        characterSelector();
+    }
+}
+characterSelector()
+var minLength = prompt("How short can your password be:", "enter number")
+var maxLength = prompt("How long can your password be:", "enter number")
 var lowercase = [...'qwertyuiopasdfghjklzxcvbnm']
 var special = ['!', '@', '#', '$', '%', "^", "&", '*',]
 var uppercase = [... 'QWERTYUIOPASDFGHJKLZXCVBNM']
@@ -27,19 +64,19 @@ function passwordCharacter(){
         return specialCharacter();
     } else if (characterChoice === 2 && uppercaseConfirm === true){
         return caiptalizedCharacter();
-    }else {
+    }else if (lowercaseConfirm === true) {
         return normalCharacter();
     
     }
 }
 function passwordLength(){
-        min = Math.ceil(8);
-        max = Math.floor(128);
+        min = Math.ceil(minLength);
+        max = Math.floor(maxLength);
         return Math.floor(Math.random() * (max - min) + min);
 }
 function generatePassword(){
     var passwordArray = []
-    for(i=0; i<= passwordLength(); i++){
+    while(passwordArray.length < passwordLength()){
         passwordArray.push(passwordCharacter());
     }
     var passwordString = ''
