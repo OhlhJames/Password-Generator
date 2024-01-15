@@ -1,5 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var specialConfirm = confirm("Do you need special characters?");
+var numeralConfirm = confirm("Do you need numerals?");
+var uppercaseConfirm = confirm("Do you need uppercase characters?");
 var lowercase = [...'qwertyuiopasdfghjklzxcvbnm']
 var special = ['!', '@', '#', '$', '%', "^", "&", '*',]
 var uppercase = [... 'QWERTYUIOPASDFGHJKLZXCVBNM']
@@ -18,14 +21,15 @@ function specialCharacter(){
 function passwordCharacter(){
     let i = Math.floor(Math.random() * 4)
     let characterChoice = i
-    if (characterChoice === 0){
+    if (characterChoice === 0 && numeralConfirm === true){
         return Math.floor(Math.random() * 9);
-    } else if (characterChoice === 1){
-        return normalCharacter();
-    } else if (characterChoice === 2){
+    } else if (characterChoice === 1 && specialConfirm === true){
+        return specialCharacter();
+    } else if (characterChoice === 2 && uppercaseConfirm === true){
         return caiptalizedCharacter();
     }else {
-        return specialCharacter();
+        return normalCharacter();
+    
     }
 }
 function passwordLength(){
