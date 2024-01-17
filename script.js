@@ -1,4 +1,7 @@
-var passwordSuperArray = []
+var generateBtn = document.querySelector("#generate");
+// Assignment Code
+
+//lets user select which kinda of characters and how many characters for their password
 function characterSelector(){
     var specialConfirm = confirm("did you need special characters?")
     var numeralConfirm = confirm("did you need numeral characters?")
@@ -36,15 +39,18 @@ function characterSelector(){
     }else if(numeralConfirm === true && specialConfirm === true){
         passwordSuperArray = numerals.concat(special)
     }
-    passwordLength = prompt("how long did you need your password to be?")
+    passwordLength = prompt("how long did you need your password to be? select a number between 8 and 128")
     writePassword();
-}   
+}  
 
+//Sets arrays to access for password generation and an empty array the store password in
+var passwordSuperArray = []
 var numerals =[0,1,2,3,4,5,6,7,8,9]
 var lowercase = [...'qwertyuiopasdfghjklzxcvbnm']
-var special = ['!', '@', '#', '$', '%', "^", "&", '*',]
+var special = ['!', '@', '#', '$', '%', '^', "&", '*',]
 var uppercase = [... 'QWERTYUIOPASDFGHJKLZXCVBNM']
 
+//assigns random characters to the empty password array
 function passwordCharacter(){
     let i = Math.floor(Math.random() * passwordSuperArray.length-1)
     return passwordSuperArray[i]
@@ -59,8 +65,7 @@ function generatePassword(){
     passwordString = passwordArray.join("");
     return passwordString;
 }
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
