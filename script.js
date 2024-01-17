@@ -40,6 +40,10 @@ function characterSelector(){
         passwordSuperArray = special
     }
     passwordLength = prompt("how long did you need your password to be? select a number between 8 and 128")
+    if(passwordLength<8 || passwordLength>128){
+        alert("Please select a number between 8 and 128")
+        passwordLength = prompt("how long did you need your password to be? select a number between 8 and 128")
+    }
     writePassword();
 }  
 
