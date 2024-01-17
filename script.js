@@ -18,14 +18,6 @@ function characterSelector(){
         passwordSuperArray = special.concat(numerals, uppercase)
     }else if(lowercaseConfirm === true && numeralConfirm === true && specialConfirm === true){
         passwordSuperArray = special.concat(numerals, lowercase)
-    }else if(lowercaseConfirm === true){
-        passwordSuperArray = lowercase
-    }else if(uppercaseConfirm === true){
-        passwordSuperArray = uppercase
-    }else if(numeralConfirm === true){
-        passwordSuperArray = numerals
-    }else if(specialConfirm === true){
-        passwordSuperArray = special
     }else if(lowercaseConfirm === true && specialConfirm === true){
         passwordSuperArray = lowercase.concat(special)
     }else if(lowercaseConfirm === true && numeralConfirm === true){
@@ -36,8 +28,16 @@ function characterSelector(){
         passwordSuperArray = uppercase.concat(numerals)
     }else if(uppercaseConfirm === true && specialConfirm === true){
         passwordSuperArray = uppercase.concat(special)
-    }else if(numeralConfirm === true && specialConfirm === true){
+    }else if(numeralConfirm === true && specialConfirm === true) {
         passwordSuperArray = numerals.concat(special)
+    }else if(lowercaseConfirm === true){
+        passwordSuperArray = lowercase
+    }else if(uppercaseConfirm === true){
+        passwordSuperArray = uppercase
+    }else if(numeralConfirm === true){
+        passwordSuperArray = numerals
+    }else if(specialConfirm === true){
+        passwordSuperArray = special
     }
     passwordLength = prompt("how long did you need your password to be? select a number between 8 and 128")
     writePassword();
