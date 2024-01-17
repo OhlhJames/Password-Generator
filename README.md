@@ -15,7 +15,7 @@ To use this webpage you start by clicking the button labeled "generate password"
 ## Credits
 
 Pulled README from Pre-Work-Study-Guide in my own repositories.
-Used activity code from gitlab repository to reference best practices for using arrays to keep track of large data sets, also used these activity codes to form my functions and loops so that the code could operate properly. Used MDN as a resource to understand how arrays function and what kinds of methods to use on my password arrays so that I could assign characters and so that I could add arrays together and form new arrays with those arrays. Also used MDN as a reference for how Math.random functions so that each passwprd would be generated randomly. ccooperated and helped fellow classmate Sean Brown with his assignment.
+Used activity code from gitlab repository to reference best practices for using arrays to keep track of large data sets, also used these activity codes to form my functions and loops so that the code could operate properly. Used MDN as a resource to understand how arrays function and what kinds of methods to use on my password arrays so that I could assign characters and so that I could add arrays together and form new arrays with those arrays. Also used MDN as a reference for how Math.random functions so that each passwprd would be generated randomly. Cooperated and helped fellow classmate Sean Brown with his assignment.
 
 ## License
 
