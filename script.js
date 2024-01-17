@@ -33,12 +33,13 @@ function characterSelector(){
         passwordSuperArray = uppercase.concat(numerals)
     }else if(uppercaseConfirm === true && specialConfirm === true){
         passwordSuperArray = uppercase.concat(special)
+    }else if(numeralConfirm === true && specialConfirm === true){
+        passwordSuperArray = numerals.concat(special)
     }
-    generatePassword()
+    passwordLength = prompt("how long did you need your password to be?")
+    writePassword();
 }   
 
-var minLength = prompt("How short can your password be:", "enter number")
-var maxLength = prompt("How long can your password be:", "enter number")
 var numerals =[0,1,2,3,4,5,6,7,8,9]
 var lowercase = [...'qwertyuiopasdfghjklzxcvbnm']
 var special = ['!', '@', '#', '$', '%', "^", "&", '*',]
@@ -48,14 +49,10 @@ function passwordCharacter(){
     let i = Math.floor(Math.random() * passwordSuperArray.length-1)
     return passwordSuperArray[i]
 }
-function passwordLength(){
-        min = Math.ceil(minLength);
-        max = Math.floor(maxLength);
-        return Math.floor(Math.random() * (max - min) + min);
-}
+
 function generatePassword(){
     var passwordArray = []
-    while(passwordArray.length < passwordLength()){
+    while(passwordArray.length < passwordLength){
         passwordArray.push(passwordCharacter());
     }
     var passwordString = ''
